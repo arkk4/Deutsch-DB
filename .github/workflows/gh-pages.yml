@@ -1,0 +1,31 @@
+name: Deploy DDB to GitHub Pages
+description: Deploys the DDB site to GitHub Pages on push to the main branch.
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install Dependencies
+        run: |
+          pip install mkdocs-material mkdocs-redirects mkdocs-awesome-pages-plugin \
+                      mkdocs-simple-hooks mkdocs-mermaid2
+
+      - name: Build and Deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: mkdocs gh-deploy --clean --force

@@ -1,4 +1,6 @@
 site_name: "Deutsch DB"
+site_url: "https://ddb.arkk4.online"
+repo_url: "https://github.com/arkk4/Deutsch-DB"
 theme:
   name: material
 
