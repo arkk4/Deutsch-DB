@@ -1,0 +1,69 @@
+site_name: "Deutsch DB"
+theme:
+  name: material
+
+nav:
+  - Словник: dictionary/index.md
+  - Теги: tags.md
+  - Майндмепи: mindmaps/Kapitel1.md
+
+plugins:
+  - search
+  - mermaid2:
+      arguments:
+        securityLevel: 'loose'
+        theme: 'neutral'
+
+  - awesome-pages
+  - mkdocs-simple-hooks:
+      hooks:
+        on_pre_build: "hooks:generate_dictionary_pages"
+  - macros:
+      module_name: macros
+  - tags:
+      shadow_tags:
+        - raw
+  - redirects:
+      redirect_maps:
+        'index.md': 'dictionary/index.md'
+
+extra_css:
+  - overrides/extra.css
+extra_javascript:
+  - overrides/extra.js
+
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+
+# ===========================================================
+# APPEARANCE
+# ===========================================================
+
+theme:
+  name: 'material'
+  favicon: 'images/favico.png'
+  logo: 'images/favico.png'
+  font:
+    text: Fira Code
+  icon:
+    repo: fontawesome/brands/github
+  features:
+    - search.suggest
+    - navigation.top
+    - navigation.tabs
+    - navigation.tabs.sticky
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch-outline
+        name: Switch to light mode
+      primary: white  
+      accent: deep orange
+    - scheme: slate
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+      primary: white
+      accent: deep orange
