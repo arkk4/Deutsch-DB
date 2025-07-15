@@ -1,6 +1,5 @@
 ---
 title: Musik
-german: Musik
 translate: Музика
 part_of_speech: nomen
 artikel: die

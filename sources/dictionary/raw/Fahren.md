@@ -12,7 +12,13 @@ konjugation:
       - wir: Fahren
       - ihr: Fahrt
       - sie_sie: Fahren
+    - imperativ:
+      - du: Fahre
+      - wir: Fahren
+      - ihr: Fahrt
+      - sie: Fahren
 partizip2: gefahren
+hilfsverb: bin
 tags:
     - Transport
     - Drive

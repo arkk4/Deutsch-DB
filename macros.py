@@ -42,7 +42,6 @@ def define_env(env):
                             # Якщо не можемо парсити YAML, створюємо базову структуру
                             template_structures[template_name] = {
                                 'title': '',
-                                'german': '',
                                 'translate': '',
                                 'part_of_speech': template_name
                             }
@@ -94,7 +93,6 @@ def define_env(env):
                 # Використовуємо структуру відповідного шаблону
                 template_structure = template_structures.get(part_of_speech, {
                     'title': '',
-                    'german': '',
                     'translate': '',
                     'part_of_speech': part_of_speech
                 })

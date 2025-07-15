@@ -1,6 +1,5 @@
 ---
 title: Haus
-german: Haus
 translate: дім
 part_of_speech: nomen
 artikel: das

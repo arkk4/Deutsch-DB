@@ -1,6 +1,5 @@
 ---
 title: Fahren
-german: Fahren
 translate: Їздити, водити
 part_of_speech: verb
 verb_type: starke
@@ -12,7 +11,13 @@ konjugation:
       - wir: Fahren
       - ihr: Fahrt
       - sie_sie: Fahren
+    - imperativ: 
+      - du: Fahre
+      - wir: Fahren
+      - ihr: Fahrt
+      - sie: Fahren
 partizip2: gefahren
+hilfsverb: sein
 tags: ['Transport', 'Drive']
 ---
 
@@ -36,4 +41,13 @@ tags: ['Transport', 'Drive']
 | sie/Sie| Fahren |
 
 
-**Partizip II:** gefahren
+**Partizip II:** gefahren bin
+
+## Imperativ
+|   Subjekt     |   Form    |
+|--------|-------|
+| du     | Fahre |
+| wir    | Fahren |
+| ihr    | Fahrt |
+| Sie| Fahren |
+

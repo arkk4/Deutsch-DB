@@ -1,6 +1,5 @@
 ---
 title: {{ meta.title }}
-german: {{ meta.german }}
 translate: {{ meta.translate }}
 part_of_speech: {{ meta.part_of_speech }}
 verb_type: {{ meta.verb_type }}
@@ -12,13 +11,19 @@ konjugation:
       - wir: {{ meta.konjugation[0]['präsens'][3]['wir'] }}
       - ihr: {{ meta.konjugation[0]['präsens'][4]['ihr'] }}
       - sie_sie: {{ meta.konjugation[0]['präsens'][5]['sie_sie'] }}
+    - imperativ: 
+      - du: {{ meta.konjugation[1]['imperativ'][0]['du'] }}
+      - wir: {{ meta.konjugation[1]['imperativ'][1]['wir'] }}
+      - ihr: {{ meta.konjugation[1]['imperativ'][2]['ihr'] }}
+      - sie: {{ meta.konjugation[1]['imperativ'][3]['sie'] }}
 partizip2: {{ meta.partizip2 }}
+hilfsverb: {{ meta.hilfsverb }}
 tags: {{ meta.tags }}
 ---
 
 # {{ meta.title }}
 
-**Німецькою:** {{ meta.german }}
+**Німецькою:** {{ meta.title }}
 
 **Переклад:** {{ meta.translate }}
 
@@ -39,6 +44,15 @@ tags: {{ meta.tags }}
 
 
 {% if meta.partizip2 %}
-**Partizip II:** {{ meta.partizip2 }}
+**Partizip II:** {{ meta.partizip2 }} {{ meta.hilfsverb }}
 {% endif %}
+
+## Imperativ
+|   Subjekt     |   Form    |
+|--------|-------|
+| du     | {{ meta.konjugation[1]['imperativ'][0]['du'] }} |
+| wir    | {{ meta.konjugation[1]['imperativ'][1]['wir'] }} |
+| ihr    | {{ meta.konjugation[1]['imperativ'][2]['ihr'] }} |
+| Sie| {{ meta.konjugation[1]['imperativ'][3]['sie'] }} |
+
 
