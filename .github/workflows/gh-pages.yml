@@ -23,7 +23,8 @@ jobs:
       - name: Install Dependencies
         run: |
           pip install mkdocs-material mkdocs-redirects mkdocs-awesome-pages-plugin \
-                      mkdocs-simple-hooks mkdocs-mermaid2-plugin mkdocs-macros-plugin
+                      mkdocs-simple-hooks mkdocs-mermaid2-plugin mkdocs-macros-plugin \
+                      python-frontmatter jinja2 re pyyaml
 
       - name: Build and Deploy
         env:
