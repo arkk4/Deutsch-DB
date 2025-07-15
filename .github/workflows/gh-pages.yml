@@ -1,6 +1,11 @@
 name: Deploy DDB to GitHub Pages
 description: Deploys the DDB site to GitHub Pages on push to the main branch.
 
+permissions:
+  contents: write      
+  pages: write         
+  id-token: write      
+
 on:
   push:
     branches:
