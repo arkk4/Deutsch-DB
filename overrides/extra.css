@@ -1,0 +1,53 @@
+/* docs/overrides/extra.css */
+.card-wrapper {
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-left: 5px solid lightgray;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.card {
+    padding: 1rem;
+    background-color: var(--md-default-bg-color);
+    margin: 0;
+}
+
+/* Ховер ефект */
+.card-wrapper:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transform: translateY(-2px);
+}
+
+.card-wrapper:hover .card {
+    background-color: rgba(var(--md-default-fg-color--rgb), 0.03);
+}
+
+/* Кольори для тексту артикля */
+.artikel-der { color: #3498db !important; }
+.artikel-die { color: #e91e63 !important; }
+.artikel-das { color: #4caf50 !important; }
+
+/* Динамічні кольори border-left для різних частин мови */
+/* Для іменників - колір залежить від артикля */
+.card-wrapper[data-part-of-speech="nomen"][data-artikel="der"] {
+    border-left-color: #3498db;
+}
+.card-wrapper[data-part-of-speech="nomen"][data-artikel="die"] {
+    border-left-color: #e91e63;
+}
+.card-wrapper[data-part-of-speech="nomen"][data-artikel="das"] {
+    border-left-color: #4caf50;
+}
+
+/* Для дієслів - помаранчовий */
+.card-wrapper[data-part-of-speech="verb"] {
+    border-left-color: #ff9800;
+}
+
+/* Для інших частин мови - сірий (за замовчуванням) */
+.card-wrapper[data-part-of-speech="andere"] {
+    border-left-color: #9e9e9e;
+}
