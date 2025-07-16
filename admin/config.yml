@@ -1,0 +1,80 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "docs/images"
+public_folder: "/images"
+
+collections:
+  # 1) Редагування існуючих сторінок
+  - name: "pages"
+    label: "Pages"
+    folder: "docs"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body",  name: "body",  widget: "markdown" }
+
+  # 2) Нові raw entries — кілька підколекцій за шаблонами
+  - name: "dictionary_andere"
+    label: "🗂 Andere Entries"
+    folder: "sources/dictionary/raw"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "title",            name: "title",            widget: "string" }
+      - { label: "translate",        name: "translate",        widget: "string" }
+      - { label: "part_of_speech",   name: "part_of_speech",   widget: "hidden", default: "andere" }
+      - { label: "tags",             name: "tags",             widget: "list",   default: [] }
+
+  - name: "dictionary_nomen"
+    label: "📓 Nomen Entries"
+    folder: "sources/dictionary/raw"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "title",          name: "title",          widget: "string" }
+      - { label: "translate",      name: "translate",      widget: "string" }
+      - { label: "part_of_speech", name: "part_of_speech", widget: "hidden", default: "nomen" }
+      - { label: "tags",           name: "tags",           widget: "list",   default: [] }
+
+  - name: "dictionary_verb"
+    label: "✏️ Verb Entries"
+    folder: "sources/dictionary/raw"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "title",          name: "title",          widget: "string" }
+      - { label: "translate",      name: "translate",      widget: "string" }
+      - { label: "part_of_speech", name: "part_of_speech", widget: "hidden", default: "verb" }
+      - { label: "verb_type",      name: "verb_type",      widget: "string" }
+      - label: "konjugation"
+        name: "konjugation"
+        widget: "list"
+        fields:
+          - label: "Tense"
+            name: "tense"
+            widget: "select"
+            options: ["präsens", "imperativ"]
+          - label: "Forms"
+            name: "forms"
+            widget: "list"
+            fields:
+              - { label: "ich",         name: "ich",         widget: "string" }
+              - { label: "du",          name: "du",          widget: "string" }
+              - { label: "er_sie_es",   name: "er_sie_es",   widget: "string" }
+              - { label: "wir",         name: "wir",         widget: "string" }
+              - { label: "ihr",         name: "ihr",         widget: "string" }
+              - { label: "sie_sie",     name: "sie_sie",     widget: "string" }
+      - { label: "partizip2",      name: "partizip2",      widget: "string" }
+      - { label: "hilfsverb",      name: "hilfsverb",      widget: "string" }
+      - { label: "tags",           name: "tags",           widget: "list",   default: [] }
