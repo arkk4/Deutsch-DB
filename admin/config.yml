@@ -42,7 +42,9 @@ collections:
     fields:
       - { label: "title",          name: "title",          widget: "string" }
       - { label: "translate",      name: "translate",      widget: "string" }
-      - { label: "part_of_speech", name: "part_of_speech", widget: "hidden", default: "nomen" }
+      - { label: "artikel",      name: "artikel",      widget: "string" }
+      - { label: "plural",      name: "plural",      widget: "string" }
+      - { label: "plural_rule",      name: "plural_rule",      widget: "string" }
       - { label: "tags",           name: "tags",           widget: "list",   default: [] }
 
   - name: "dictionary_verb"
